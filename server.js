@@ -51,15 +51,6 @@ app.get("/mensagens/:id", (req, res) => {
 app.get("/total-mensagens", (req, res) => res.json({ total: mensagens.length }));
 
 
-// Sprint 03 - Novas Rotas : then/catch e async/await
-app.get("/mensagens-then", (req, res) =>{
-    consultarMensagens()
-    .then(dados => res.json (dados))
-    .catch(erro =>{
-        console.error(erro);
-        res.status(500).json({erro: "Falha ao consultar mensagens"});
-    });
-});
 
 
 app.listen(porta, () => {
